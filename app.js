@@ -1,0 +1,4 @@
+const menu = document.querySelector('.menu');
+menu.addEventListener('click', () => {const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'关闭导航':'打开导航');document.querySelector('nav').classList.toggle('open',open);});
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('nav').classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','打开导航');}));
+document.querySelector('#copy').addEventListener('click',async()=>{const toast=document.querySelector('#toast');try{await navigator.clipboard.writeText(document.querySelector('#commands').textContent);toast.textContent='部署命令已复制，请先修改配置再启动';}catch{toast.textContent='复制未成功，请在代码区域选择并复制命令';}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);});
