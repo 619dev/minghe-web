@@ -1,3 +1,4 @@
+import './localize.mjs';
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
