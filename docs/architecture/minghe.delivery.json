@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "d036a59d-df6d-4262-a504-7c01fbbfc3ea",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/candidate.json",
+  "output": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/minghe.html",
+  "specification": {
+    "sha256": "3fccf5f81a9616564632c4d9c2f0c135b49913e7aca49870d2264f9d7d720fb8",
+    "bytes": 8187
+  },
+  "artifact": {
+    "sha256": "64782505fad771269b6fded6b58c56e1541b4c8f35194015de931370e44699cb",
+    "bytes": 830542
+  }
+}

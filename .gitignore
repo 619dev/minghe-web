@@ -6,3 +6,7 @@ node_modules/
 # Local brag projects, source assets, intermediate renders and review files
 /brag-output/
 /brag-output-*/
+
+# Local Archify installation and generated review evidence
+/.tools/
+/.archify/

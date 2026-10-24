@@ -62,3 +62,25 @@ npm run build
 - `index.html` 为中文源文件；`translations.json` 维护英语，`locales/{语言}.json` 维护另外六种语言，`locales/config.json` 维护语言名称、无障碍标签、元信息及交互提示。
 - `scripts/localize.mjs` 在开发启动和构建时生成八种语言的 HTML 和 `locale-config.js`。新增中文正文没有对应翻译时构建会报错。页面正文不依赖运行时翻译服务。
 - `preferences.js` 在样式加载前应用主题，减少主题闪烁。本地存储不可用时仍可切换语言与主题，偏好不跨页面保存。
+
+## 源码架构网页
+
+页首导航和页脚的「源码架构」入口打开 `/architecture.html`；八种语言入口均可访问，图内说明为中文。
+
+- 基于 MingHe 提交 `8d00f52dd6234bc5b2a736d77a925b68b07ade92`，分析 TLS 接入、Digest 注册、呼叫路由、JWE 消息和内存离线队列。
+- 明确区分默认 DTLS-SRTP 端到端路径、可选 ZRTP 透明中继和 SDES 解密后重加密兼容中继；源码链接固定到分析版本。
+- 使用 [Archify](https://github.com/tt-a1i/archify) 3.2.0 生成，工具提交 `25cf37080fc8b1dbe758a4efc3935b55f3327083`；项目本地安装位于 `.tools/archify`，不纳入网站仓库。
+- `public/architecture.html` 为无需运行时依赖的生成产物；构建自动复制至 `dist/architecture.html`。
+- 候选源文件、许可和自动验证记录保存在 `docs/architecture/`。验证记录中的绝对路径代表生成时位置；公开网页是验证产物的逐字节副本。
+
+重新生成（需要 Node.js、Chrome 以及对应版本 MingHe 源码）：
+
+```sh
+git clone https://github.com/tt-a1i/archify.git .tools/archify
+git -C .tools/archify checkout 25cf37080fc8b1dbe758a4efc3935b55f3327083
+mkdir -p .archify/architecture-minghe-20261024-180000
+cp docs/architecture/candidate.json .archify/architecture-minghe-20261024-180000/candidate.json
+node .tools/archify/archify/bin/archify.mjs finalize architecture .archify/architecture-minghe-20261024-180000/candidate.json .archify/architecture-minghe-20261024-180000/minghe.html --repo-root ../minghe --quality showcase --json
+cp .archify/architecture-minghe-20261024-180000/minghe.html public/architecture.html
+npm run build
+```

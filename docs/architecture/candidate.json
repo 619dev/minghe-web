@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "鸣鹤 MingHe · 源码架构",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-minghe-20261024-180000/minghe.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/619dev/minghe.git",
+      "revision": "8d00f52dd6234bc5b2a736d77a925b68b07ade92"
+    }
+  },
+  "components": [
+    {
+      "id": "client",
+      "type": "external",
+      "label": "SIP 终端",
+      "sublabel": "注册 · 呼叫 · 加密消息",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/server.rs",
+          "line": 153,
+          "end_line": 168
+        },
+        {
+          "path": "src/sip/e2ee.rs",
+          "line": 1,
+          "end_line": 6
+        }
+      ]
+    },
+    {
+      "id": "server",
+      "type": "backend",
+      "label": "TLS 信令入口",
+      "sublabel": "认证身份与对话归属检查",
+      "pos": [
+        370,
+        40
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/server.rs",
+          "line": 350,
+          "end_line": 385
+        },
+        {
+          "path": "src/sip/server.rs",
+          "line": 421,
+          "end_line": 494
+        }
+      ]
+    },
+    {
+      "id": "router",
+      "type": "backend",
+      "label": "呼叫路由 Router",
+      "sublabel": "默认校验 SDP 与身份绑定",
+      "pos": [
+        700,
+        40
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/router.rs",
+          "line": 324,
+          "end_line": 385
+        },
+        {
+          "path": "src/sip/router.rs",
+          "line": 102,
+          "end_line": 125
+        }
+      ]
+    },
+    {
+      "id": "registrar",
+      "type": "security",
+      "label": "注册与 Digest",
+      "sublabel": "内存注册表 · SHA-256 默认",
+      "pos": [
+        370,
+        230
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/registrar.rs",
+          "line": 44,
+          "end_line": 98
+        },
+        {
+          "path": "src/sip/registrar.rs",
+          "line": 210,
+          "end_line": 281
+        }
+      ]
+    },
+    {
+      "id": "message",
+      "type": "backend",
+      "label": "MessageService",
+      "sublabel": "JWE 准入 · 在线转发",
+      "pos": [
+        40,
+        230
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/router.rs",
+          "line": 244,
+          "end_line": 264
+        },
+        {
+          "path": "src/sip/message.rs",
+          "line": 214,
+          "end_line": 275
+        }
+      ]
+    },
+    {
+      "id": "queue",
+      "type": "database",
+      "label": "离线消息队列",
+      "sublabel": "内存暂存 · 重启清空",
+      "pos": [
+        40,
+        420
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/message.rs",
+          "line": 20,
+          "end_line": 38
+        },
+        {
+          "path": "src/sip/message.rs",
+          "line": 100,
+          "end_line": 113
+        },
+        {
+          "path": "src/sip/message.rs",
+          "line": 281,
+          "end_line": 300
+        }
+      ]
+    },
+    {
+      "id": "peer",
+      "type": "external",
+      "label": "被叫终端",
+      "sublabel": "独立验证身份与媒体",
+      "pos": [
+        1030,
+        40
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/router.rs",
+          "line": 324,
+          "end_line": 385
+        },
+        {
+          "path": "src/sip/e2ee.rs",
+          "line": 1,
+          "end_line": 6
+        },
+        {
+          "path": "src/sip/e2ee.rs",
+          "line": 37,
+          "end_line": 47
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "type": "backend",
+      "label": "可选媒体模式",
+      "sublabel": "显式配置 ZRTP / SDES",
+      "pos": [
+        700,
+        230
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/router.rs",
+          "line": 102,
+          "end_line": 125
+        },
+        {
+          "path": "src/sip/sdes_router.rs",
+          "line": 1017,
+          "end_line": 1066
+        },
+        {
+          "path": "src/sip/sdes_router.rs",
+          "line": 1070,
+          "end_line": 1123
+        }
+      ]
+    },
+    {
+      "id": "zrtp",
+      "type": "backend",
+      "label": "ZRTP 透明中继",
+      "sublabel": "密钥在终端 · 须核对 SAS",
+      "pos": [
+        530,
+        420
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/media/zrtp.rs",
+          "line": 1,
+          "end_line": 12
+        },
+        {
+          "path": "src/sip/sdes_router.rs",
+          "line": 1045,
+          "end_line": 1066
+        }
+      ]
+    },
+    {
+      "id": "sdes",
+      "type": "security",
+      "label": "SDES 兼容中继",
+      "sublabel": "服务器解密并重新加密",
+      "pos": [
+        870,
+        420
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "src/sip/sdes_router.rs",
+          "line": 1081,
+          "end_line": 1118
+        },
+        {
+          "path": "src/media/relay.rs",
+          "line": 188,
+          "end_line": 218
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ingress",
+      "to": "server",
+      "label": "SIP / TLS",
+      "from": "client"
+    },
+    {
+      "id": "calls",
+      "to": "router",
+      "label": "已认证呼叫",
+      "from": "server"
+    },
+    {
+      "id": "forward",
+      "to": "peer",
+      "label": "转发信令",
+      "from": "router"
+    },
+    {
+      "id": "register",
+      "to": "registrar",
+      "label": "REGISTER",
+      "from": "server"
+    },
+    {
+      "id": "messages",
+      "to": "message",
+      "label": "MESSAGE",
+      "from": "server"
+    },
+    {
+      "id": "offline",
+      "to": "queue",
+      "label": "离线暂存",
+      "from": "message"
+    },
+    {
+      "id": "optional",
+      "to": "profiles",
+      "label": "配置媒体时",
+      "from": "router"
+    },
+    {
+      "id": "opaque",
+      "to": "zrtp",
+      "label": "ZRTP",
+      "from": "profiles"
+    },
+    {
+      "id": "terminate",
+      "to": "sdes",
+      "label": "SDES",
+      "from": "profiles"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "默认：信令与媒体分离",
+      "items": [
+        "无 media 配置时，Router 原样转发通过准入检查的 SDP，媒体由终端通过 ICE / DTLS-SRTP 建立。",
+        "服务器检查身份令牌结构与绑定；终端必须使用独立可信密钥验证签名。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "可选中继：两种信任边界",
+      "items": [
+        "ZRTP 只转发不透明媒体；终端必须强制 ZRTP、验证 SAS 并认证媒体。",
+        "SDES 面向 Bria 兼容：服务器持有媒体密钥并解密、重加密，不具备端到端保密性。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "状态与消息",
+      "items": [
+        "REGISTER 认证成功后绑定连接身份，触发离线消息补投；对话操作绑定原 TLS 通道。",
+        "MESSAGE 只接受规定的加密封装；服务端检查不能代替收件端验密、签名与重放检查。",
+        "注册、呼叫和离线队列为内存状态；消息 TTL 24 小时，每分机最多 100 条，全局最多 10000 条。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "分析范围与复现",
+      "items": [
+        "依据 minghe 提交 8d00f52 的核心运行路径；这是系统概览，未展开解析器、事务清理和证书续期细节。",
+        "每个组件均附固定版本源码位置；图中关系表示调用或控制，不表示媒体必经所有组件。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/candidate.json",
+    "sha256": "3fccf5f81a9616564632c4d9c2f0c135b49913e7aca49870d2264f9d7d720fb8",
+    "bytes": 8187
+  },
+  "artifact": {
+    "path": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/minghe.html",
+    "sha256": "64782505fad771269b6fded6b58c56e1541b4c8f35194015de931370e44699cb",
+    "bytes": 830542
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/review-2/minghe.finalize.json",
+    "summaryReceipt": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/review-2/minghe.finalize-summary.json",
+    "browserCheckReceipt": "/Users/facilisvelox/Downloads/projects/minghe-web/.archify/architecture-minghe-20261024-180000/review-2/minghe.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-24T13:04:06.748Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3678,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}
