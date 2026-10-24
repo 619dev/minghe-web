@@ -44,6 +44,8 @@ npm run build
 
 ## 介绍视频
 
+首屏「观看短片」入口跳转至 `#film` 播放区域，八种语言页面均提供原生播放器、封面与下载入口。视频由用户点击播放，页面初次加载不预取 MP4；画面为中文，各语言页面均有说明。
+
 - 成片：`public/media/minghe-intro.mp4`，24 秒、1920×1080、30 fps，H.264 / AAC，约 2.2 MB，已优化渐进式网页播放。
 - 封面：`public/media/minghe-intro.jpg`；视频首帧也已使用此封面。
 - 部署后可通过 `/media/minghe-intro.mp4` 与 `/media/minghe-intro.jpg` 引用，构建时自动复制到 `dist/media/`。
