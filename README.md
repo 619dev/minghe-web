@@ -42,6 +42,15 @@ npm run build
 
 网站没有账号、追踪脚本或虚构通话功能。图中的分机连接为架构示意。
 
+## 介绍视频
+
+- 成片：`public/media/minghe-intro.mp4`，24 秒、1920×1080、30 fps，H.264 / AAC，约 2.2 MB，已优化渐进式网页播放。
+- 封面：`public/media/minghe-intro.jpg`；视频首帧也已使用此封面。
+- 部署后可通过 `/media/minghe-intro.mp4` 与 `/media/minghe-intro.jpg` 引用，构建时自动复制到 `dist/media/`。
+- 内容为电话插画与虚构对话的情景演绎，非实机通话录屏。
+- Music: Sascha Ende, ende.app (CC BY 4.0)，曲目 “Happy Beats / Business Moves Vol.12”，许可：https://ende.app/en/standard-license 。音效来自 Kenney（CC0），回铃音本地合成；音乐署名同时保留在片尾。
+- `brag-output/` 和 `brag-output-*/` 是本地视频工程与中间产物，已通过 `.gitignore` 排除；仅成片和封面纳入网站仓库。
+
 ## 语言与主题
 
 - 支持简体中文、英语、日语、韩语、西班牙语、俄语、法语和德语，页首语言选择器随时切换。
