@@ -27,7 +27,7 @@ const applyTheme = theme => {
   themeButton.setAttribute('aria-label', label);
   themeButton.title = label;
   themeButton.firstElementChild.textContent = dark ? '☀' : '☾';
-  document.querySelector('meta[name="theme-color"]').content = dark ? '#111d18' : '#f8f9f5';
+  document.querySelector('meta[name="theme-color"]').content = '#071a35';
 };
 let manualTheme = false;
 try { manualTheme = ['light','dark'].includes(localStorage.getItem('minghe-theme')); } catch {}

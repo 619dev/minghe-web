@@ -143,3 +143,44 @@ html[lang="zh-CN"] .preferences select{font-size:calc(12px * var(--zh-text-scale
 html[lang="zh-CN"] .film-link>span{font-size:calc(22px * var(--zh-text-scale))}
 html[lang="zh-CN"] .film-caption p{font-size:calc(13px * var(--zh-text-scale))}
 html[lang="zh-CN"] .film-caption a{font-size:calc(13px * var(--zh-text-scale))}
+
+/* MingHe 2026 — institutional editorial system, adapted from the Coinbase
+   DESIGN.md vocabulary in VoltAgent/awesome-design-md. */
+:root{
+  --bg:#fff;
+  --green:#1379c8;
+  --ink:#08172c;
+  --muted:#687386;
+  --line:#dfe6ef;
+  --navy:#071a35;
+  --navy-2:#0e2d56;
+  --ice:#9bdcff;
+  --gold:#d9ad5b;
+  --surface:#f3f7fb;
+}
+body{background:var(--bg);color:var(--ink);font-weight:400;overflow-x:hidden}
+.wrap{max-width:1200px}
+header{height:76px;max-width:1344px;padding:0 48px;gap:38px;border-bottom:1px solid #ffffff20;color:#fff;position:relative;z-index:10}
+header:before{content:"";position:absolute;inset:0 auto;left:50%;width:100vw;transform:translateX(-50%);background:var(--navy);z-index:-1}
+.brand{gap:12px;flex-shrink:0}.brand-logo{width:46px;height:46px;display:block;object-fit:cover;border-radius:50%;border:1px solid #ffffff35}.brand strong{font-size:19px;font-weight:600;letter-spacing:.08em}.brand strong span{font-size:11px;color:#b9cee7;letter-spacing:.16em;text-transform:uppercase}
+nav{gap:28px;font-size:14px;font-weight:500}nav a:hover{color:var(--ice)}.nav-github{font-size:14px;border-left-color:#ffffff30}.preferences select,.preferences button{color:#fff;border-color:#ffffff30;background:#ffffff0b}
+.hero{min-height:680px;padding-top:70px;padding-bottom:70px;color:#fff;position:relative;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0 auto;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(circle at 80% 28%,#173f704d 0,transparent 34%),linear-gradient(135deg,#071a35,#0a203f 65%,#07172e);z-index:-1}
+.hero .eyebrow{color:var(--ice)}.hero h1{font-size:76px;line-height:1.06;font-weight:400;letter-spacing:-3px;margin:28px 0}.hero .serif{color:var(--ice);font-weight:400}.hero-copy>p{color:#c1d1e5;font-weight:400;line-height:1.8}.hero-foot{color:#9eb2ca}.hero .text-link{color:#d9e9fa}.hero .text-link:hover{color:var(--ice)}
+.button{border-radius:100px;min-height:48px;padding:14px 24px;gap:22px;font-weight:600}.primary{background:#1686d9}.primary:hover{background:#2b9bed}.hero .primary{background:var(--ice);color:#061a34}.hero .primary:hover{background:#c6ebff}
+.signal-art{height:520px;background:radial-gradient(circle,#1a4e7d60 0,transparent 64%)}.orbit{border-color:#6aa5cf55}.o3{border-color:#d9ad5b55}.core{width:190px;height:190px;border:1px solid #ffffff28;border-radius:28px;background:#0d2a50;box-shadow:0 28px 70px #0007;overflow:hidden;display:block}.core img{width:100%;height:100%;object-fit:cover}.core span{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);white-space:nowrap;font:600 9px/1 ui-monospace,monospace;letter-spacing:.16em;color:#d9edff;text-shadow:0 1px 8px #000}
+.endpoint{border-color:#ffffff20;background:#0e2c52e8;color:#fff;border-radius:18px;box-shadow:0 12px 35px #0004}.endpoint small{color:#a9bed5}.endpoint i,.status-dot{background:var(--ice)}.signal-line{background:linear-gradient(90deg,transparent,var(--ice),transparent)}.security-label{top:350px;background:#0e2d56;color:#cbeeff;border-color:#65bce44d}.art-tag,.art-caption,.cross{color:#89a9c7}.waves{color:var(--ice)}
+.protocol-strip{border:0;background:#0b2343;color:#fff}.protocol-strip strong{color:#d9e9fa}.protocol-strip span{color:#8ea9c5}.protocol-strip i{color:var(--gold)}
+.section{padding:96px 0}.eyebrow{color:#287db6;font-size:12px;text-transform:uppercase}.section-heading{align-items:flex-start;margin-bottom:48px}h2{font-size:48px;line-height:1.15;font-weight:400;letter-spacing:-1.5px}.section-heading>p,.deploy-grid>div>p{color:var(--muted);font-weight:400}
+.film-section{border:0}.film-player{border:0;border-radius:24px;background:#061324;box-shadow:0 24px 60px #0b274516}.film-caption p{color:var(--muted)}
+.features{gap:20px;border:0;border-radius:0;overflow:visible}.features article{min-height:300px;padding:34px;border:1px solid var(--line)!important;border-radius:24px;background:#fff;transition:transform .2s,box-shadow .2s}.features article:hover{transform:translateY(-4px);box-shadow:0 12px 30px #09244610}.feature-icon{color:#1686d9}.features p,.footnote{color:var(--muted);font-weight:400}.chip{border-radius:100px;border-color:#d7e7f5;color:#287db6;background:#f1f8fd;padding:5px 10px}
+.deploy-section{padding:96px 0;background:var(--surface);border-color:var(--line)}.steps li>span{border-color:#bdd7ea;color:#167cbf}.steps p,.port-note p{color:var(--muted)}.terminal{background:#071a35;border-radius:24px;box-shadow:0 24px 60px #071a3522}.terminal-bar,.terminal-footer{border-color:#ffffff18}.terminal .comment{color:#89a7c2}.terminal-footer{color:var(--ice)}
+.app-cards{gap:20px}.app-card,.app-setup,.hardware-card{border-color:var(--line);border-radius:24px}.app-card{background:#fff}.app-monogram{background:#e9f5fd;color:#147cc1;border-radius:50%}.app-card p,.app-setup p,.app-note{color:var(--muted)}
+.product-image{background:#edf4fa}.hardware-card{box-shadow:0 18px 55px #0924460c}.product-info>p,.product-info .compatibility,.specs span{color:var(--muted)}
+.faq-section{border-color:var(--line)}details{border-color:var(--line)}details p{color:var(--muted)}summary span{color:#1686d9}
+.closing{border:0;border-radius:28px;background:linear-gradient(135deg,#071a35,#103b6d);color:#fff;overflow:hidden}.closing .eyebrow{color:var(--ice)}.closing-mark{color:#ffffff0b}
+footer{border-color:var(--line)}footer .brand-logo{width:42px;height:42px}footer a:hover{color:#1686d9}
+[data-theme=dark]{--bg:#061426;--ink:#f4f8fc;--muted:#a9b9ca;--line:#25405d;--surface:#0b2039}
+[data-theme=dark] body{background:var(--bg);color:var(--ink)}[data-theme=dark] .features article,[data-theme=dark] .app-card,[data-theme=dark] .app-setup,[data-theme=dark] .hardware-card{background:#0b2039}[data-theme=dark] .product-image{background:#102944}[data-theme=dark] .film-caption p,[data-theme=dark] .features p,[data-theme=dark] .steps p,[data-theme=dark] .port-note p,[data-theme=dark] .app-card p,[data-theme=dark] .app-setup p,[data-theme=dark] .app-note,[data-theme=dark] .product-info>p,[data-theme=dark] .product-info .compatibility,[data-theme=dark] .specs span,[data-theme=dark] details p{color:var(--muted)}
+@media(max-width:1250px){.wrap{margin-inline:32px}.hero h1{font-size:64px}}
+@media(max-width:760px){.wrap{margin-inline:20px}header{height:68px;padding:0 20px}.brand-logo{width:40px;height:40px}.hero{padding-top:48px;padding-bottom:54px;min-height:auto}.hero h1{font-size:48px;letter-spacing:-2px}.signal-art{height:430px}.core{width:150px;height:150px}.security-label{top:294px}.section,.deploy-section{padding:72px 0}h2{font-size:36px}.features{gap:14px}.features article{border-radius:20px}.film-player,.app-card,.app-setup,.hardware-card,.terminal{border-radius:20px}.closing{border-radius:22px}.preferences{margin-left:auto}}
