@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minghe iOS Privacy Policy</title>
+  <link rel="icon" href="/minghe.png" type="image/png">
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 44rem; font: 1rem/1.7 system-ui, sans-serif; }
+    h1 { font-size: 2rem; line-height: 1.2; }
+    h2 { font-size: 1.2rem; margin-top: 1.5rem; }
+    article + article { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid GrayText; }
+    .page-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+  </style>
+</head>
+<body>
+  <div class="page-links">
+    <a href="/">Minghe Home</a>
+    <a href="#english">English</a>
+    <a href="#chinese" lang="zh-CN">简体中文</a>
+  </div>
+  <main>
+    <article lang="en" aria-labelledby="english">
+      <h1 id="english">Minghe iOS Privacy Policy</h1>
+      <p>Minghe is a SIP voice client for a server you choose. It does not create a Minghe cloud account or send analytics, advertising identifiers or recordings to the app developer.</p>
+      <h2>On your device</h2>
+      <p>The app stores your SIP settings, optional trusted certificate and up to 100 recent calls per account. Call history includes the other extension, time, direction and whether the call connected. If you choose to save the SIP password, the app stores it in the device-only Keychain. ZRTP stores peer verification material locally. Minghe uses the microphone during calls and does not record calls. Language and appearance preferences are stored on the device. CallKit receives the peer extension to display the system call interface.</p>
+      <h2>Your SIP server, Bark and Apple</h2>
+      <p>The app sends your SIP extension, Digest authentication data, call signaling and encrypted media to the server you configure. In SDES-SRTP mode the server can decrypt and re-encrypt media. If your SIP server administrator enables Bark reminders, that server sends a generic incoming-call reminder and the configured Bark device key to its chosen Bark endpoint. The reminder contains a link to open Minghe. Bark and Apple handle delivery. Your server administrator controls server-side logging, retention, sharing and deletion. Contact your administrator for that server’s policy and to exercise rights over data it holds. Apple processes push delivery under its <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a>.</p>
+      <h2>Your controls</h2>
+      <p>To stop Bark reminders, ask your server administrator to remove the Bark configuration for your extension. Use About → Erase local data to remove the saved account, credentials, ZRTP verification and call history from this device. Use iOS Settings to change microphone or local-network access. Deleting local data does not remove information already held by your SIP server.</p>
+      <h2>Contact</h2>
+      <p>For app privacy requests, contact the Minghe maintainer through <a href="https://minghe.mobile">minghe.mobile</a>.</p>
+    </article>
+    <article lang="zh-CN" aria-labelledby="chinese">
+      <h1 id="chinese">Minghe iOS 隐私政策</h1>
+      <p>Minghe 是连接到您所选服务器的 SIP 语音客户端。应用不创建 Minghe 云账户，也不向应用开发者发送分析数据、广告标识符或录音。</p>
+      <h2>设备上的数据</h2>
+      <p>应用在设备上保存 SIP 设置、您选择信任的证书，以及每个账户最多 100 条最近通话记录，包括对方分机、时间、通话方向和是否接通。选择保存密码时，密码存入本机钥匙串。ZRTP 的对端核验资料存放于设备上。应用在通话时使用麦克风，且不录制通话。语言和外观偏好保存在本机。CallKit 会接收对端分机号，以显示系统通话界面。</p>
+      <h2>SIP 服务器、Bark 与 Apple</h2>
+      <p>应用向您配置的服务器发送 SIP 分机、Digest 认证信息、呼叫信令和加密媒体。使用 SDES-SRTP 时，服务器可以解密并重新加密语音。如果服务器管理员启用了 Bark 提醒，该服务器会把通用来电提醒及已配置的 Bark 设备密钥发送至管理员选择的 Bark 服务。提醒附有打开 Minghe 的链接。通知由 Bark 和 Apple 投递。服务器管理员决定服务器端的日志、保留、共享和删除方式。有关服务器政策和数据权利，请联系管理员。Apple 依照其<a href="https://www.apple.com/legal/privacy/">隐私政策</a>处理推送投递。</p>
+      <h2>您的选择</h2>
+      <p>要停止接收 Bark 提醒，请让服务器管理员移除您的分机 Bark 配置。可在「关于」中清除本机保存的账户、密码、ZRTP 核验资料和通话记录，或在系统设置中修改麦克风及本地网络访问权限。清除本机数据后，服务器端数据仍由服务器管理员管理。</p>
+      <h2>联系方式</h2>
+      <p>应用隐私相关请求可通过 <a href="https://minghe.mobile">minghe.mobile</a> 联系 Minghe 维护者。</p>
+    </article>
+  </main>
+</body>
+</html>
