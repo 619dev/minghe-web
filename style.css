@@ -186,7 +186,10 @@ footer{border-color:var(--line)}footer .brand-logo{width:42px;height:42px}footer
 @media(max-width:760px){.wrap{margin-inline:20px}header{height:68px;padding:0 20px}.brand-logo{width:40px;height:40px}.hero{padding-top:48px;padding-bottom:54px;min-height:auto}.hero h1{font-size:48px;letter-spacing:-2px}.signal-art{height:430px}.core{width:150px;height:150px}.security-label{top:294px}.section,.deploy-section{padding:72px 0}h2{font-size:36px}.features{gap:14px}.features article{border-radius:20px}.film-player,.app-card,.app-setup,.hardware-card,.terminal{border-radius:20px}.closing{border-radius:22px}.preferences{margin-left:auto}}
 
 .hardware-card + .hardware-card { margin-top: 24px; }
-.product-image .blackview-image { mix-blend-mode: normal; filter: none; border-radius: 12px; height: auto; max-height: 400px; margin: 24px 0; }
+.product-image.blackview-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 2vw, 20px); padding: clamp(12px, 3vw, 28px); min-height: 0; align-content: center; align-items: start; }
+.blackview-gallery figure { width: 100%; margin: 0; text-align: center; }
+.blackview-gallery .blackview-image { display: block; box-sizing: border-box; width: 100%; height: auto; aspect-ratio: 3 / 4; padding: 8px; mix-blend-mode: normal; filter: none; border-radius: 12px; background: white; }
+.blackview-gallery figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
 .communication-options { padding-inline-start: 1.2em; }
 .communication-options li + li { margin-top: 8px; }
 .communication-options a { text-decoration: underline; }
