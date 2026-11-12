@@ -184,3 +184,9 @@ footer{border-color:var(--line)}footer .brand-logo{width:42px;height:42px}footer
 [data-theme=dark] body{background:var(--bg);color:var(--ink)}[data-theme=dark] .features article,[data-theme=dark] .app-card,[data-theme=dark] .app-setup,[data-theme=dark] .hardware-card{background:#0b2039}[data-theme=dark] .product-image{background:#102944}[data-theme=dark] .film-caption p,[data-theme=dark] .features p,[data-theme=dark] .steps p,[data-theme=dark] .port-note p,[data-theme=dark] .app-card p,[data-theme=dark] .app-setup p,[data-theme=dark] .app-note,[data-theme=dark] .product-info>p,[data-theme=dark] .product-info .compatibility,[data-theme=dark] .specs span,[data-theme=dark] details p{color:var(--muted)}
 @media(max-width:1250px){.wrap{margin-inline:32px}.hero h1{font-size:64px}}
 @media(max-width:760px){.wrap{margin-inline:20px}header{height:68px;padding:0 20px}.brand-logo{width:40px;height:40px}.hero{padding-top:48px;padding-bottom:54px;min-height:auto}.hero h1{font-size:48px;letter-spacing:-2px}.signal-art{height:430px}.core{width:150px;height:150px}.security-label{top:294px}.section,.deploy-section{padding:72px 0}h2{font-size:36px}.features{gap:14px}.features article{border-radius:20px}.film-player,.app-card,.app-setup,.hardware-card,.terminal{border-radius:20px}.closing{border-radius:22px}.preferences{margin-left:auto}}
+
+.hardware-card + .hardware-card { margin-top: 24px; }
+.product-image .blackview-image { mix-blend-mode: normal; filter: none; border-radius: 12px; height: auto; max-height: 400px; margin: 24px 0; }
+.communication-options { padding-inline-start: 1.2em; }
+.communication-options li + li { margin-top: 8px; }
+.communication-options a { text-decoration: underline; }
